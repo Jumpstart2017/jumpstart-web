@@ -1,0 +1,14 @@
+#container {
+    flex: 1;
+    background-color: #d3d3d3;
+    color: #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    text-align:center;
+}
+
+#header {
+    background-color: #3FA7D6;
+    width: 100%;
+    text-align: left;
+}
