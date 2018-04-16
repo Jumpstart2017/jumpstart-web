@@ -8,19 +8,19 @@ import Transition from 'react-transition-group/Transition';
  */
 class Ripple extends React.Component {
   state = {
-    rippleVisible: false,
-    rippleLeaving: false,
+    visible: false,
+    leaving: false,
   };
 
   handleEnter = () => {
     this.setState({
-      rippleVisible: true,
+      visible: true,
     });
   };
 
   handleExit = () => {
     this.setState({
-      rippleLeaving: true,
+      leaving: true,
     });
   };
 
@@ -34,21 +34,16 @@ class Ripple extends React.Component {
       rippleSize,
       ...other
     } = this.props;
-    const { rippleVisible, rippleLeaving } = this.state;
+    const { visible, leaving } = this.state;
 
-    const className = classNames(
-      classes.wrapper,
+    const rippleClassName = classNames(
+      classes.ripple,
       {
-        [classes.wrapperLeaving]: rippleLeaving,
-        [classes.wrapperPulsating]: pulsate,
+        [classes.rippleVisible]: visible,
+        [classes.ripplePulsate]: pulsate,
       },
       classNameProp,
     );
-
-    const rippleClassName = classNames(classes.ripple, {
-      [classes.rippleVisible]: rippleVisible,
-      [classes.rippleFast]: pulsate,
-    });
 
     const rippleStyles = {
       width: rippleSize,
@@ -57,10 +52,15 @@ class Ripple extends React.Component {
       left: -(rippleSize / 2) + rippleX,
     };
 
+    const childClassName = classNames(classes.child, {
+      [classes.childLeaving]: leaving,
+      [classes.childPulsate]: pulsate,
+    });
+
     return (
       <Transition onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
-        <span className={className}>
-          <span className={rippleClassName} style={rippleStyles} />
+        <span className={rippleClassName} style={rippleStyles}>
+          <span className={childClassName} />
         </span>
       </Transition>
     );

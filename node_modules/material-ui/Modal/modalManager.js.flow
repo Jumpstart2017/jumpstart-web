@@ -1,4 +1,5 @@
 import css from 'dom-helpers/style';
+import ownerDocument from 'dom-helpers/ownerDocument';
 import getScrollbarSize from 'dom-helpers/util/scrollbarSize';
 import isOverflowing from './isOverflowing';
 import { ariaHidden, hideSiblings, showSiblings } from './manageAriaHidden';
@@ -39,7 +40,7 @@ function setContainerStyle(data, container) {
     style.paddingRight = `${getPaddingRight(container) + scrollbarSize}px`;
 
     // .mui-fixed is a global helper.
-    const fixedNodes = document.querySelectorAll('.mui-fixed');
+    const fixedNodes = ownerDocument(container).querySelectorAll('.mui-fixed');
     for (let i = 0; i < fixedNodes.length; i += 1) {
       const paddingRight = getPaddingRight(fixedNodes[i]);
       data.prevPaddings.push(paddingRight);
@@ -57,7 +58,7 @@ function removeContainerStyle(data, container) {
     container.style[key] = data.style[key];
   });
 
-  const fixedNodes = document.querySelectorAll('.mui-fixed');
+  const fixedNodes = ownerDocument(container).querySelectorAll('.mui-fixed');
   for (let i = 0; i < fixedNodes.length; i += 1) {
     fixedNodes[i].style.paddingRight = `${data.prevPaddings[i]}px`;
   }
@@ -83,7 +84,7 @@ class ModalManager {
     this.data = [];
   }
 
-  add = (modal, container) => {
+  add(modal, container) {
     let modalIdx = this.modals.indexOf(modal);
     const containerIdx = this.containers.indexOf(container);
 
@@ -117,9 +118,9 @@ class ModalManager {
     this.data.push(data);
 
     return modalIdx;
-  };
+  }
 
-  remove = modal => {
+  remove(modal) {
     const modalIdx = this.modals.indexOf(modal);
 
     if (modalIdx === -1) {
@@ -150,11 +151,11 @@ class ModalManager {
     }
 
     return modalIdx;
-  };
+  }
 
-  isTopModal = modal => {
+  isTopModal(modal) {
     return !!this.modals.length && this.modals[this.modals.length - 1] === modal;
-  };
+  }
 }
 
 export default ModalManager;
