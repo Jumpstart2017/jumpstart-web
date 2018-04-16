@@ -1,0 +1,103 @@
+#container {
+    flex: 1;
+    background-color: #EEEEEE;
+    color: #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    text-align:center;
+}
+
+#header {
+    background-color: #3FA7D6;
+    width: 100%;
+    text-align: left;
+    padding-bottom:50px;
+}
+
+#header h1 {
+    text-align:left;
+    margin-bottom:0px;
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+#header h3 {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-envelope {
+    margin-top:20px;
+    color: #FFFFFF;
+}
+
+#container > div > div > div > div.video-envelope > div.MuiPaper-root-91 {
+    padding:0px;
+}
+
+/* Panel titles */
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 > div.MuiExpansionPanelSummary-content-183 > p {
+    color: #FFFFFF;
+}
+/* Research panel*/
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
+    background-color:#F46036;
+
+}
+
+/* Writing panel */
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
+    background-color: #414770;
+}
+
+/* Revision panel */
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
+    background-color: #372248;
+}
+
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 > div.MuiButtonBase-root-167.MuiIconButton-root-187.MuiExpansionPanelSummary-expandIcon-185 > span.MuiIconButton-label-192 > svg{
+    color: #FFFFFF;
+}
+
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div.MuiPaper-root-99.MuiPaper-shadow1-102.MuiExpansionPanel-root-176.MuiExpansionPanel-expanded-177 > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    border-radius: 10px;
+}
+
+.writing-panel {
+
+}
+
+.research-panel {
+
+}
+
+#container > div > div {
+    padding: 0px;
+}
+
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    box-shadow: 0px 4px 0px 0px #F46036, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
+
+}
+
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    box-shadow: 0px 4px 0px 0px #414770, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    box-shadow: 0px 4px 0px 0px #372248, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);    
+}

@@ -1,0 +1,28 @@
+div[id="container\ landing"] {
+    flex: 1;
+    background-color: #414770;
+    color: #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    text-align:center;
+}
+
+h1 {
+    text-align: center;
+}
+
+[id="container\ landing"] > div > div:nth-child(2) {
+    display: block;
+}
+
+[id="container\ landing"] > div > div:nth-child(5) {
+    display: flex;
+}
+
+[id="container\ landing"] > div > div:nth-child(4) {
+    display: block;
+}
+
+[id="container\ landing"] > div > div:nth-child(3) {
+    display: block;
+}
