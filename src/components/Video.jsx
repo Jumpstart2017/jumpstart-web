@@ -11,12 +11,27 @@ import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Navigation from './navigation.jsx';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router';
 
 
 const style= {
+  paper : {
     marginLeft:20,
     marginRight:20, 
     minHeight: '90%',
+  },
+  font: {
+    "font-family": "Lao-Sangam"
+  }, 
+  p: {
+    "maxWidth": "200px",
+    "font-family": "Lao-Sangam"
+  }
 }
 
 const cardMediaStyle = {
@@ -24,25 +39,23 @@ const cardMediaStyle = {
 
 var videos = [
   {
-    "title": "Making Connections",
-    "description": "Making connections",
-    "url": "https://player.vimeo.com/video/118733653",
-    "category": "Research",
-    "length": "3 minutes"
+    "title": "Kickstarter3 - Sources",
+    "description": "Welcome to Office Hours",
+    "url": "https://player.vimeo.com/video/87812378",
+    "category": "Research"
   },
   {
-    "title": "Sources",
+    "title": "Significance",
     "description": "Sources",
     "url": "https://player.vimeo.com/video/103401988",
     "category": "Revision",
     "length": "1 minute"
   },
   {
-    "title": "Asking Questions",
-    "description": "Asking questions",
-    "url": "https://player.vimeo.com/video/118858498",
-    "category": "Research",
-    "length": "10 minutes"
+    "title": "Significance",
+    "description": "Talk 5 min, what will it make s think about differently? Why do you care?",
+    "url": "https://player.vimeo.com/video/118858500",
+    "category": "Research"
   },
   {
     "title": "JS_3",
@@ -55,9 +68,21 @@ var videos = [
     "title": "Engaging Sources",
     "description": "Engage your sources",
     "url": "https://player.vimeo.com/video/114695683",
-    "category": "Research",
-    "length": "2 minutes"
+    "category": "Research"
+  },
+  {
+    "title": "Making Connections",
+    "description": "Making Connections",
+    "url": "https://player.vimeo.com/video/118733653",
+    "category": "Research"
+  },
+  {
+    "title": "Asking Questions",
+    "description": "Ask questions, brain storm questions 2min, freewrite answers to one Q 5min",
+    "url": "https://player.vimeo.com/video/118858498",
+    "category": "Research"
   }
+
 ]
 
 function getCards(videos, panelTitle) {
@@ -65,19 +90,18 @@ function getCards(videos, panelTitle) {
   return videos.map(function(vid) {
     if (vid.category == panelTitle) {
       return (   
-        <Grid container spacing={8} >
-          <Card item="true" xs={12} sm={4}>
+        <Grid container spacing={16} >
+          <Card item="true" xs={16} sm={4}>
             <CardMedia>
               <div className="video-container">
-                <iframe src={vid.url} width="400" height="250" frameBorder="0" webkitallowfullscreen="true" mozallowullscreen="true" allowFullScreen="true"></iframe>
+                <iframe src={vid.url} height="250" frameBorder="0" webkitallowfullscreen="true" mozallowullscreen="true" allowFullScreen="true"></iframe>
               </div>
             </CardMedia>
             <CardContent>
-              <Typography variant="headline" component="h2">
+              <Typography variant="headline" component="h2" style={style.font}>
               {vid.title}
               </Typography>
-              <Typography>{vid.length}</Typography>
-              <Typography component="p">
+              <Typography component="p" style={style.p}>
                 {vid.description}
               </Typography>
             </CardContent>
@@ -92,7 +116,7 @@ function getCards(videos, panelTitle) {
 function returnHeader() {
   return (
     <div id="header">
-    <Typography variant="title" color="inherit">
+    <Typography variant="title" color="inherit" style={style.font}>
       <h1>Browse our videos</h1>
       <h3>Get Started. Get Unstuck. Get Motivated</h3>
     </Typography>
@@ -104,9 +128,11 @@ class Video extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      uid: ''
+      uid: '',
+      videos: {}
     }
   }
+
 
     render() {
       return (
@@ -114,12 +140,12 @@ class Video extends Component {
           <Grid container>
               <Grid item xs={12}>
               <Navigation></Navigation>
-                <Paper style={ style } zdepth={2} >
+                <Paper style={ style.paper } zdepth={2} >
                     {returnHeader()}
                     <div className="video-envelope">
                       <ExpansionPanel>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                          <Typography className="research-panel">Research</Typography>
+                          <Typography style={style.font} className="research-panel">Research</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                           {getCards(videos, "Research")}
@@ -127,7 +153,7 @@ class Video extends Component {
                       </ExpansionPanel>
                       <ExpansionPanel>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                          <Typography className="writing-panel">Writing</Typography>
+                          <Typography className="writing-panel"  style={style.font}>Writing</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                         {getCards(videos, "Writing")}
@@ -135,7 +161,7 @@ class Video extends Component {
                       </ExpansionPanel>
                       <ExpansionPanel>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                          <Typography className="revision-panel">Revision</Typography>
+                          <Typography className="revision-panel"  style={style.font}>Revision</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                           {getCards(videos, "Revision")}

@@ -25,13 +25,22 @@ class Landing extends Component {
       buttonStyle: {
           backgroundColor: 'transparent',
           color: '#FFFFFF',
-          display: 'block'
+          display: 'block',
+          "font-family": "Lao-Sangam"
       },
       barStyle: {
           color: '#FFFFFF',
           flex:1,
           backgroundColor: 'transparent',
-          boxShadow: 'none'
+          boxShadow: 'none',
+          "font-family": "Lao-Sangam"
+      },
+      font: {
+        "font-family": "Lao-Sangam",
+        color: '#FFFFFF' 
+      },
+      img: {
+        'max-height': '500px'
       }
 
   };
@@ -43,7 +52,7 @@ class Landing extends Component {
                   <AppBar style={styles.barStyle} position="static">
                       <Toolbar>
                       <img src={require("../assets/JumpstartLogoThick_White.png")} alt="Jumpstart Logo" height="50" width="50"/>
-                          <Typography variant="title" color="inherit">
+                          <Typography variant="title" color="inherit" style={styles.font}>
                               JUMPSTART
                           </Typography>
                               <Button style={styles.buttonStyle}>ABOUT</Button>
@@ -53,24 +62,24 @@ class Landing extends Component {
               </div>
           </Row>
           <Row>
-            <Typography variant="body1" color="inherit">
+            <Typography variant="body1" style={styles.font}>
               <h1 id="title">Get Started. Get Unstuck. Get Motivated</h1>
             </Typography>
           </Row>
           <Row>
-              <img src={require("../assets/JumpstartLogoThick_White.png")} alt="Jumpstart Logo" height="50%" width="50%"/>
-              <Typography variant="title" color="inherit"> 
+              <img style={styles.img} src={require("../assets/JumpstartLogoThick_White.png")} alt="Jumpstart Logo" height="50%"/>
+              <Typography variant="title" style={styles.font}> 
                 <h1>The Time is Now</h1>
               </Typography>
           </Row>
           <Row>
-            <Typography variant="subheading" color="inherit">
+            <Typography variant="subheading" color="inherit" style={styles.font}>
               <h2 id="slogon">JUMPSTART YOUR WRITING</h2>
             </Typography>
           </Row>
           <Row>
             <Col xs4={2} lg={6}>
-              <Button style={buttonStyle} variant="raised" color="primary">
+              <Button href="./create" style={buttonStyle} variant="raised" color="primary">
               Register
               </Button>
             </Col>

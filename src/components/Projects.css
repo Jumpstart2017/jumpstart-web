@@ -15,6 +15,64 @@
     margin: 5px;
 }
 
-h1 {
+h1.projects {
     color: #000000;
+    font-family: "Lao-Sangam"
+}
+
+body > div:nth-child(6) > div{
+z-index: 10000;
+}
+
+
+#project-title {
+    color: #000000;
+    padding-left: 30px;
+    font-family: "Lao-Sangam"
+}
+
+#proj-cards > div > div {
+    margin:10px;
+
+}
+
+#proj-cards {
+    padding: 30px;
+    font-family: "Lao-Sangam"
+}
+
+.line {
+    padding:0px;
+    margin:0px;
+    text-align: left;
+    padding-left:10px;
+}
+#proj-cards .MuiCardHeader-root-108 {
+    background-color: #F46036;
+    padding-bottom:30px;
+    padding-top: 0px;
+    
+}
+
+#proj-cards .MuiCardHeader-root-99 {
+    background-color: #F46036;
+    padding-bottom:30px;
+    padding-top: 0px;
+    
+}
+
+#proj-cards .MuiCardActions-root-115 {
+    background-color: #F46036;
+    padding-bottom:20px;
+    padding-top: 15px;
+
+}
+
+#proj-cards .MuiCardContent-root-114 {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#proj-cards .MuiButton-label-63 {
+    margin-top:5px;
 }

@@ -19,6 +19,14 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog';
+import Select from 'material-ui/Select';
+import Menu, { MenuItem } from 'material-ui/Menu';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router';
 
 
 
@@ -26,18 +34,25 @@ const style= {
   marginLeft:20,
   marginRight:20, 
   minHeight: '90%',
+  color: '#000000'
+}
+
+const h ={
+  color: '#000000'
 }
 
 var projects = [
   {
     "title": "Thesis",
     "deadline": "2019-01-20",
-    "type": 1
+    "type": 1,
+    "pid": "5"
   },
   {
     "title": "Paper",
     "deadline": "2020-10-10",
-    "type": 2
+    "type": 2,
+    "pid": "6"
   }
 ];
 
@@ -49,11 +64,21 @@ class Projects extends Component {
     this.state = {
       uid: '',
       open: false,
-      entry: {}
+      type: '',
+      deadline: '',
+      name: ''
     }
     this.getCards = this.getCards.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
 
+  };
+
+
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
   };
 
   handleClickOpen = () => {
@@ -62,16 +87,36 @@ class Projects extends Component {
   }
 
   handleClose = () => {
+    this.createProject();
     this.setState({ open: false });
   }
 
+  createProject = () => {
+    var entry = {
+      "title": this.state.name,
+      "deadline": this.state.deadline,
+      "type": this.state.type
+    }
+    console.log(entry)
+    console.log(this.state.type)
+    projects.push(entry)
+  }
 
+  displayType = (num) => {
+    if(this.num == 1) {
+      return "Research"
+    } else if (this.num == 2) {
+      return "Writing"
+    } else if (this.num == 3) {
+      return "Revision"
+    }
+  }
 
   getCards = (projects) => {
     return projects.map(function(proj) {
       return (   
           <Grid container spacing={8} >
-            <Card item="true" xs={12} sm={4}>
+            <Card item="true" xs={12} sm={3}>
               <CardHeader action={
                 <IconButton>
                   <ArrowDownIcon />
@@ -84,11 +129,11 @@ class Projects extends Component {
                 </Typography>
                 <Typography>{proj.deadline}</Typography>
                 <Typography component="p">
-                  {proj.title}
+                  {proj.type}
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" >See Project</Button>
+                <Link to={'/project/'+ proj.pid}><Button variant="raised" size="small" >See Project</Button></Link>
               </CardActions>
             </Card>
           </Grid>
@@ -97,6 +142,7 @@ class Projects extends Component {
   }
 
   showAddProject = () => {
+        var today = new Date();
         return(<Dialog
           open={this.state.open}
           onClose={() => this.handleClose()}
@@ -107,39 +153,42 @@ class Projects extends Component {
             <DialogContentText>
               Please enter the following details to create a new project!
             </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Project Name"
-              type="email"
-              errortext="This field is required."
-              fullWidth
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
+            <form>
+                <TextField
+                  autoFocus
+                  margin="dense"
+                  id="name"
+                  label="Project Name"
+                  type="text"
+                  errortext="This field is required."
+                  value={this.state.name}
+                  onChange={this.handleChange('name')}                  
+                  fullWidth
+                />
+                <TextField
+                  margin="dense"
+                  id="deadline"
+                  label="Deadline (MM/DD/YYY)"
+                  type="text"
+                  value={this.state.deadline}
+                  onChange={this.handleChange('deadline')}
+                  fullWidth
+                />
+                <TextField
+                  id="select-type"
+                  select
+                  label="Stage"
+                  value={this.state.type}
+                  helperText="Please select what stage is your project"
+                  margin="normal"
+                  fullWidth
+                  onChange={this.handleChange('type')}
+                >
+                  <MenuItem value={1}>Research</MenuItem>
+                  <MenuItem value={2}>Writing</MenuItem>
+                  <MenuItem value={3}>Revision</MenuItem>
+                </TextField>
+            </form>
           </DialogContent>
           <DialogActions>
             <Button onClick={() => this.handleClose()} color="primary">
@@ -157,20 +206,21 @@ class Projects extends Component {
     return (
       <div id="container">
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={12} >
             <Navigation></Navigation>
             <Paper style={ style } zdepth={2} >
               <Row id="header">
                   <h1>Welcome</h1>
               </Row>
               <Row>
-                <h1>Projects</h1>
+                <h1 id="project-title">Projects</h1>
+                
                 <IconButton   onClick={() => this.handleClickOpen()}>
                     <AddIcon />
                 </IconButton>
                  { this.showAddProject()}
               </Row>
-              <Row id="project-cards">
+              <Row id="proj-cards">
                   
                   { this.getCards(projects)}
               </Row>

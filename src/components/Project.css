@@ -1,0 +1,93 @@
+#proj-title {
+    color: #000000;
+    padding-left: 20px;
+    font-family: "Lao-Sangam";
+}
+
+#project-deadline {
+    color: #FFFFFF;
+    padding-left: 30px;
+    font-family: "Lao-Sangam";
+    margin-top:0px;
+}
+
+#project-name {
+    color: #FFFFFF;
+    padding-top: 50px;
+    text-align:left;
+    padding-left: 30px;
+}
+
+#project-cards {
+    padding: 30px;
+    font-family: "Lao-Sangam";
+   
+}
+
+#project-cards > div:nth-child(3) > div > div.MuiCardHeader-root-108 {
+    background-color: #0EAD69;
+    padding-bottom:0px;
+    padding-top: 0px;   
+}
+
+#project-cards > div:nth-child(3) > div > div.MuiCardHeader-root-99 {
+    background-color: #0EAD69;
+    padding-bottom:0px;
+    padding-top: 0px;   
+}
+
+#project-cards > div:nth-child(2) > div > div.MuiCardHeader-root-108 {
+    background-color: #414770;
+    padding-bottom:0px;
+    padding-top: 0px;   
+}
+
+#project-cards > div:nth-child(2) > div > div.MuiCardHeader-root-99 {
+    background-color: #414770;
+    padding-bottom:0px;
+    padding-top: 0px;   
+}
+
+
+#project-cards > div > div {
+    font-size:40px;
+    border-radius: 10px; 
+    background-color: #EEEEEE;   
+    margin-left:20px;
+    margin-right:20px;
+    padding-bottom:30px;
+}
+
+#project-cards .MuiCardHeader-root-108 {
+    background-color: #F46036;
+    padding-bottom:0px;
+    padding-top: 0px;
+    
+}
+
+#project-cards .MuiCardHeader-root-99 {
+    background-color: #F46036;
+    padding-bottom:0px;
+    padding-top: 0px;
+    
+}
+#project-cards .MuiTypography-headline-43 {
+    color: #FFFFFF;
+}
+
+#project-cards .MuiSvgIcon-root-93 {
+    color: #FFFFFF;
+}
+
+#project #header {
+    color: #3FA7D6;
+}
+#container {
+    -ms-flex: 1 1;
+    flex: 1 1;
+    background-color: #EEEEEE;
+    color: #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}

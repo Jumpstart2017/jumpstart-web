@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
 .App {
   text-align: center;
-  font: American Typewriter;
+  font-family: 'Karla', cursive;
 }
 
 .App-logo {
@@ -27,3 +29,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@font-face {
+  font-family:'Lao-Sangam';
+  src:
+    local('Lao-Sangam') format ('ttf');
+}
+

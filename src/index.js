@@ -6,6 +6,7 @@ import Video from './components/Video.jsx';
 import Login from './components/Login.jsx';
 import CreateAccount from './components/CreateAccount.jsx';
 import Projects from './components/Projects.jsx'
+import Project from './components/Project.jsx'
 
 class Home extends Component {
   render() {
@@ -21,6 +22,7 @@ render(
     <Route path="/login" component={Login}/>
     <Route path="/create" component={CreateAccount}/>
     <Route path="/projects" component={Projects}/>
+    <Route path="/project/:id" component={Project}/>
   </Router>,
   document.getElementById('root')
 );

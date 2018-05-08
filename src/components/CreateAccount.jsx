@@ -6,6 +6,12 @@ import { Grid, Row, Col } from 'react-material-responsive-grid';
 import Input, { InputLabel } from 'material-ui/Input';
 import { FormControl, FormHelperText } from 'material-ui/Form';
 import TextField from 'material-ui/TextField';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router';
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -31,7 +37,8 @@ class CreateAccount extends Component {
       <Grid>
         <Row>
           <Col xs={12} sm={6}>
-            <form>
+            <form id="create">
+            <Row>
             <TextField
                 required
                 id="name"
@@ -40,6 +47,8 @@ class CreateAccount extends Component {
                 onChange={this.handleChange('name')}
                 margin="normal"
               />
+              </Row>
+              <Row>
               <TextField
                 required
                 id="email"
@@ -48,6 +57,8 @@ class CreateAccount extends Component {
                 onChange={this.handleChange('email')}
                 margin="normal"
               />
+              </Row>
+              <Row>
               <TextField
                 required
                 id="password"
@@ -56,7 +67,8 @@ class CreateAccount extends Component {
                 onChange={this.handleChange('password')}
                 margin="normal"
               />
-              <input type="submit" value="Submit" />
+              </Row>
+              <Link to="/videos"><input href="/videos" type="submit" form="create" value="Submit" /></Link>
             </form>
           </Col>
           <Col xs={12} sm={6}>

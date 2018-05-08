@@ -10,12 +10,17 @@ class Navigation extends Component {
             buttonStyle: {
                 backgroundColor: 'transparent',
                 color: '#3fa7d6',
-                display: 'block'
+                display: 'block',
+                "font-family": "Lao-Sangam"
             },
             barStyle: {
                 color: '#3fa7d6',
                 flex:1
+            },
+            font: {
+                "font-family": "Lao-Sangam"
             }
+            
 
         };
 
@@ -24,12 +29,12 @@ class Navigation extends Component {
                 <AppBar style={styles.barStyle} position="static" color="#FFFFFF">
                     <Toolbar>
                     <img src={require("../assets/JumpstartLogoThick_Blue.png")} alt="Jumpstart Logo" height="50" width="50"/>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="title" color="inherit" style={styles.font}>
                             JUMPSTART
                         </Typography>
-                            <Button href="./" style={styles.buttonStyle}>HOME</Button>
-                            <Button href="./projects" style={styles.buttonStyle}>PROJECTS</Button>
-                            <Button href="./videos" style={styles.buttonStyle}>VIDEO</Button>
+                            <Button href="/" style={styles.buttonStyle}>HOME</Button>
+                            <Button href="/projects" style={styles.buttonStyle}>PROJECTS</Button>
+                            <Button href="/videos" style={styles.buttonStyle}>VIDEO</Button>
                     </Toolbar>
                 </AppBar>
             </div>

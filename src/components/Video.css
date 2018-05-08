@@ -50,26 +50,27 @@
 }
 
 /* Panel titles */
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 > div.MuiExpansionPanelSummary-content-183 > p {
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-180 > div.MuiExpansionPanelSummary-content-184 > p {
     color: #FFFFFF;
 }
+
 /* Research panel*/
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
-    background-color:#F46036;
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-180 {
+    background-color:#372248;
 
 }
 
 /* Writing panel */
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
-    background-color: #414770;
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-180 {
+    background-color: #F46036;
 }
 
 /* Revision panel */
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 {
-    background-color: #372248;
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-180 {
+    background-color: #FFD23F;
 }
 
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div > div.MuiButtonBase-root-167.MuiExpansionPanelSummary-root-179 > div.MuiButtonBase-root-167.MuiIconButton-root-187.MuiExpansionPanelSummary-expandIcon-185 > span.MuiIconButton-label-192 > svg{
+.MuiSvgIcon-root-194 {
     color: #FFFFFF;
 }
 
@@ -89,15 +90,15 @@
     padding: 0px;
 }
 
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
-    box-shadow: 0px 4px 0px 0px #F46036, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(1) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div{
+    box-shadow: 0px 4px 0px 0px #372248, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
 
 }
 
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
-    box-shadow: 0px 4px 0px 0px #414770, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    box-shadow: 0px 4px 0px 0px #FFD23F, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
-#container > div > div > div.MuiPaper-root-99.MuiPaper-shadow2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(3) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
-    box-shadow: 0px 4px 0px 0px #372248, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);    
+#container > div > div > div.MuiPaper-root-99.MuiPaper-elevation2-103.MuiPaper-rounded-100 > div.video-envelope > div:nth-child(2) > div.MuiCollapse-container-200.MuiCollapse-entered-201 > div > div > div > div > div {
+    box-shadow: 0px 4px 0px 0px #F46036, 0px 4px 7px 0px rgba(0, 0, 0, 0.2), 3px 6px 2px -2px rgba(0, 0, 0, 0.2);    
 }
